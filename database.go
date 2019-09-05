@@ -49,8 +49,8 @@ func TmpDB(t *testing.T) (*sqlx.DB, func()) {
 func dbURL(t *testing.T) url.URL {
 	u := url.URL{
 		Scheme: "postgres",
-		User:   url.UserPassword("root", "postgres"),
-		Host:   "localhost:26257",
+		User:   url.UserPassword("postgres", "postgres"),
+		Host:   "localhost:5432",
 		Path:   "postgres",
 		RawQuery: (url.Values{
 			"sslmode":  []string{"disable"},
